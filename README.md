@@ -2,10 +2,21 @@
 
 This repo is being set up to host questions and answers featured at The Strategy Unit RAP Drop In sessions, which are hosted by the [Data Science team](https://www.strategyunitwm.nhs.uk/about), and to provide a space for discussion and pre-emptive question asking.
 
-## How to submit a question for the next session
+## How to interact with us
 
-...
+### How to submit a question for the next session
 
+1.  Click on the Discussions button at the top of the repository's main page.
+2.  Click the 'Q&A' button.
+3.  Enter the text of your question and click Start Discussion.
+4.  We will pick up these questions and try to answer them at the next RAP Drop In session, and will add the answers to the discussion, so that you can find the answer here if you miss a session.
+
+Please also interact by:
+  -  Upvoting answers you think are useful
+  -  Marking the accepted answer using 'Mark as answer'
+  -  Upvoting new discussions if you also want them to be answered at the next session.
+
+See [here](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/participating-in-a-discussion) for further guidance on GitHub Discussions.
 -----
 
 Sessions are advertised across platforms with the following text.
@@ -23,7 +34,6 @@ Open door session, come and go as you please
 -  We’ll make sure that someone from our data science team is on hand to help.
 -  Please feel free to share the invite with anyone who might be interested.
 -  and let us know if you have any suggestions!
-
 
 We look forward to seeing you there :-)
 
