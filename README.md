@@ -8,7 +8,7 @@ This repo is being set up to host questions and answers featured at The Strategy
 
 1.  Click on the 'Discussions' button at the top of the repository's main page.
 2.  Click the 'Q&A' button.
-3.  Enter the text of your question and click 'Start Discussion'.
+3.  Enter the text of your question and click 'Start Discussion'. If your query is specific to something in your code, consider sharing a **rep**roducible **ex**ample. There is a package that can help called [{reprex}](https://reprex.tidyverse.org/). Doing this will likely lead to a faster, better answer.
 4.  We will pick up these questions and try to answer them at the next RAP Drop In session, and will add the answers to the discussion, so that you can find the answer here if you miss a session.
 
 Please also interact by:
