@@ -37,25 +37,25 @@ We look forward to seeing you there :-)
 
 ## Useful Links
 
--  NHSE DS https://nhsengland.github.io/datascience/
--  NHSE RAP CoP https://nhsdigital.github.io/rap-community-of-practice/
--  Aqua Book https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government
--  Goldacre https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis
--  NHS-R Slack https://nhsrcommunity.slack.com/
--  NHS-R website https://nhsrcommunity.com/
--  PyCom https://nhs-pycom.net/
--  PyCom Slack https://join.slack.com/t/nhs-pycom/shared_invite/zt-z6h1hszo-3_w68FdalVM2EATVVdgCuw
--  Happy Git https://happygitwithr.com/
--  Atlassian Git tutorials https://www.atlassian.com/git/tutorials
--  Git book https://git-scm.com/book/en/v2
--  Python data carpentry https://datacarpentry.org/lessons/
--  Python data science handbook https://jakevdp.github.io/PythonDataScienceHandbook/
--  ReproZip https://www.reprozip.org/
--  Newsletter https://nhsrcommunity.substack.com/
--  Epidemiology R book https://epirhandbook.com/en/
--  Git as a team sport https://the-strategy-unit.github.io/data_science/presentations/2024-11-22_github-team-sport-rpysoc/#/title-slide
--  Renv https://rstudio.github.io/renv/
--  R4DS https://r4ds.hadley.nz/
+- [NHSE DS](https://nhsengland.github.io/datascience/)
+- [NHSE RAP CoP](https://nhsdigital.github.io/rap-community-of-practice/)
+- [Aqua Book](https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government)
+- [Goldacre](https://www.gov.uk/government/publications/better-broader-safer-using-health-data-for-research-and-analysis)
+- [NHS-R Slack](https://nhsrcommunity.slack.com/)
+- [NHS-R website](https://nhsrcommunity.com/)
+- [PyCom](https://nhs-pycom.net/)
+- [PyCom Slack](https://join.slack.com/t/nhs-pycom/shared_invite/zt-z6h1hszo-3_w68FdalVM2EATVVdgCuw)
+- [Happy Git](https://happygitwithr.com/)
+- [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials)
+- [Git book](https://git-scm.com/book/en/v2)
+- [Python data carpentry](https://datacarpentry.org/lessons/)
+- [Python data science handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [ReproZip](https://www.reprozip.org/)
+- [Newsletter](https://nhsrcommunity.substack.com/)
+- [Epidemiology R book](https://epirhandbook.com/en/)
+- [Git as a team sport](https://the-strategy-unit.github.io/data_science/presentations/2024-11-22_github-team-sport-rpysoc/#/title-slide)
+- [Renv](https://rstudio.github.io/renv/)
+- [R4DS](https://r4ds.hadley.nz/)
 
 
 
