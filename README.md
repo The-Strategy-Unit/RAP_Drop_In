@@ -1,6 +1,6 @@
 # RAP_Drop_In
 
-This repo is being set up to host questions and answers featured at The Strategy Unit RAP Drop In sessions, which are hosted by the [Data Science team](https://the-strategy-unit.github.io/data_science/), and to provide a space for discussion and pre-emptive question asking.
+This repo is being set up to host questions and answers featured at The Strategy Unit NHS RAP Drop In sessions, which are hosted by the [Data Science team](https://the-strategy-unit.github.io/data_science/), and to provide a space for discussion and pre-emptive question asking.
 
 ## How to interact with us
 
