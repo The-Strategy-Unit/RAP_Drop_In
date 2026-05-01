@@ -18,7 +18,7 @@ During the session:
 - Add the [the discussions link](https://github.com/The-Strategy-Unit/RAP_Drop_In/discussions) to the chat
 - If there are new discussion questions, see if the contributor is present and wants to talk about it, otherwise ask for questions from the room
 - At close, encourage people to continue contributing to the discussions page
-- Give the date of the next session: <DATE>
+- Give the date of the next session
 
 After the session:
 
