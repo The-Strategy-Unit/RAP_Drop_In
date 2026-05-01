@@ -13,7 +13,7 @@ Before the session:
 
 During the session:
 
-- Keep an eye on the attendee count: <ATTENDEE COUNT>
+- Keep an eye on the attendee count
 - Welcome, state purpose and goals
 - Add the [the discussions link](https://github.com/The-Strategy-Unit/RAP_Drop_In/discussions) to the chat
 - If there are new discussion questions, see if the contributor is present and wants to talk about it, otherwise ask for questions from the room
