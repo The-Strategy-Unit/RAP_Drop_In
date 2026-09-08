@@ -1,0 +1,38 @@
+name: Close past drop-in session issues
+
+# Closes 'session'-labelled issues once the session date in the title
+# (Drop-in session: N (YYYY-MM-DD)) has passed.
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close issues whose session date has passed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TZ: UTC
+        run: |
+          today=$(date -u +%F)
+
+          gh issue list --label session --state open --json number,title \
+            --jq '.[] | "\(.number)\t\(.title)"' | while IFS=$'\t' read -r number title; do
+            session_date=$(grep -oP '\d{4}-\d{2}-\d{2}' <<< "$title" | head -1)
+
+            if [[ -z "$session_date" ]]; then
+              echo "issue #$number: no date found in title '$title', skipping"
+              continue
+            fi
+
+            if [[ "$session_date" < "$today" ]]; then
+              echo "issue #$number: session date $session_date has passed, closing"
+              gh issue close "$number" --comment "Automatically closed: the session date ($session_date) has passed."
+            fi
+          done

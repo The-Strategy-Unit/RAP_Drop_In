@@ -1,0 +1,71 @@
+name: Create drop-in session issue
+
+# Drop-in sessions run every 14 days on a Wednesday. This runs every Wednesday
+# and, on the Wednesdays that are themselves session dates, creates the issue
+# for the session 4 weeks (2 cycles) ahead - so each session's issue is filed
+# about a month before it happens.
+
+on:
+  schedule:
+    - cron: '0 8 * * 3'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check whether a session falls 4 weeks from today
+        id: check
+        env:
+          TZ: UTC
+        run: |
+          # 2026-08-26 is a confirmed session date (session 31), used as the
+          # reference point for the every-14-days cadence.
+          anchor="2026-08-26"
+          today=$(date -u +%F)
+          diff_days=$(( ( $(date -u -d "$today" +%s) - $(date -u -d "$anchor" +%s) ) / 86400 ))
+
+          if (( diff_days % 14 != 0 )); then
+            echo "today ($today) is not a session date, nothing to do"
+            echo "create=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          target_date=$(date -u -d "$today + 28 days" +%F)
+          echo "target_date=$target_date" >> "$GITHUB_OUTPUT"
+          echo "create=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create the issue
+        if: steps.check.outputs.create == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_DATE: ${{ steps.check.outputs.target_date }}
+          ASSIGNEE: josephwilson8-nhs
+        run: |
+          # Skip if an issue for this date already exists.
+          existing=$(gh issue list --label session --state all --limit 200 \
+            --json title --jq "[.[] | select(.title | contains(\"$TARGET_DATE\"))] | length")
+          if (( existing > 0 )); then
+            echo "an issue for $TARGET_DATE already exists, skipping"
+            exit 0
+          fi
+
+          last_number=$(gh issue list --label session --state all --limit 200 \
+            --json title --jq '.[].title' | grep -oP 'Drop-in session: \K[0-9]+' | sort -n | tail -1)
+          next_number=$(( ${last_number:-0} + 1 ))
+
+          body=$(awk '/^---$/{c++; next} c>=2' .github/ISSUE_TEMPLATE/session-checklist.md)
+          body="${body//<SESSION NUMBER>/$next_number}"
+          body="${body//<YYYY-MM-DD>/$TARGET_DATE}"
+          body=$(printf '%s\n' "$body" | sed "/Nominate lead/s|<GITHUB HANDLE (ASSIGN TO THIS ISSUE)>|@$ASSIGNEE|")
+
+          gh issue create \
+            --title "Drop-in session: $next_number ($TARGET_DATE)" \
+            --label session \
+            --assignee "$ASSIGNEE" \
+            --body "$body"
